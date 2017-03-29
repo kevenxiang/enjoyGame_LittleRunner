@@ -1,0 +1,53 @@
+//
+//  Entity.cpp
+//  enjoyGame_LittleRunner
+//
+//  Created by xiang on 2017/3/27.
+//
+//
+
+#include "Entity.hpp"
+
+Entity::Entity() {
+    m_sprite = NULL;
+}
+
+Entity::~Entity() {
+
+}
+
+Sprite *Entity::getSprite() {
+    return this->m_sprite;
+}
+
+void Entity::bindSprite(Sprite *sprite) {
+    this->m_sprite = sprite;
+    this->addChild(m_sprite);
+    
+    Size size = m_sprite->getContentSize();
+    m_sprite->setPosition(Point(size.width * 0.5f, size.height * 0.5f));
+    this->setContentSize(size);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
